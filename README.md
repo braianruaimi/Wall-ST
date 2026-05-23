@@ -4,20 +4,27 @@ Repositorio: https://github.com/braianruaimi/Wall-ST
 
 Demo web esperada: https://braianruaimi.github.io/Wall-ST/
 
-Web app y PWA para Wall ST - Pool Bar, pensada para uso mobile-first en el local, con pedidos por WhatsApp, promos, asistente, ruleta, pagos rápidos por alias y una experiencia visual estilo app nativa.
+Sitio web y app de acceso rápido para Wall ST - Pool Bar, pensada para que cada cliente pueda ver el menú, pedir por WhatsApp, conocer promociones y resolver pagos en segundos desde su mesa.
 
-## Incluye
+## Qué ofrece
 
-- Pedidos de birra y combo por WhatsApp.
-- Programa de fidelidad para ficha + cerveza.
-- Asistente guiado para pedidos.
-- Fila virtual de mesas.
-- Ruleta flotante para decidir quién paga.
-- Panel flotante de pago con copiado de alias.
-- Sección Conocenos con fotos y reel.
-- PWA con manifest y service worker.
+- Pedidos rápidos por WhatsApp para birras, combos y extras.
+- Promociones destacadas para incentivar consumo y recompra.
+- Asistente guiado para que pedir sea más simple.
+- Fila virtual para mesas de pool.
+- Ruleta social para sumar juego y participación entre amigos.
+- Acceso directo a pagos por transferencia con alias copiable.
+- Sección visual para mostrar el ambiente del local con fotos y reel.
+- Versión instalable como acceso directo en el celular.
 
-## Archivos principales
+## Pensado para el cliente
+
+- Menos tiempo esperando en caja o buscando al personal.
+- Más claridad para ver qué pedir y cómo pagarlo.
+- Mejor experiencia desde el celular dentro del local.
+- Una presentación más atractiva de la marca Wall ST.
+
+## Base técnica
 
 - index.html: interfaz principal, estilos y lógica en HTML/CSS/JS puro.
 - manifest.webmanifest: configuración de instalación de la app.
