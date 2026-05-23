@@ -1407,6 +1407,11 @@
       border: 1px solid rgba(255, 0, 60, 0.22);
     }
 
+    .loyalty-carousel {
+      grid-auto-columns: minmax(84%, 1fr);
+      margin-top: 4px;
+    }
+
     .promo-card p {
       color: var(--muted);
       line-height: 1.55;
@@ -1614,10 +1619,24 @@
     }
 
     .snacks-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
       margin-top: 18px;
+    }
+
+    .snacks-carousel {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(72%, 1fr);
+      gap: 12px;
+      max-width: 100%;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      padding-bottom: 6px;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .snacks-carousel::-webkit-scrollbar {
+      display: none;
     }
 
     .snacks-header {
@@ -1658,6 +1677,7 @@
         linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
         rgba(20, 20, 20, 0.65);
       backdrop-filter: blur(12px);
+      scroll-snap-align: start;
     }
 
     .snack-card.is-selected {
@@ -1881,6 +1901,11 @@
       backdrop-filter: blur(12px);
     }
 
+    .footer h2 {
+      font-size: 1.02rem;
+      letter-spacing: 0.01em;
+    }
+
     .footer p {
       color: var(--muted);
       line-height: 1.5;
@@ -1953,10 +1978,16 @@
       .carousel {
         grid-auto-columns: minmax(86%, 1fr);
       }
+
+      .loyalty-carousel,
+      .snacks-carousel {
+        grid-auto-columns: minmax(90%, 1fr);
+      }
     }
 
     @media (max-width: 719px) {
       .app-shell {
+        width: 100%;
         padding-top: max(88px, calc(18px + env(safe-area-inset-top)));
         padding-bottom: max(118px, calc(98px + env(safe-area-inset-bottom)));
       }
@@ -2005,10 +2036,61 @@
       }
 
       .know-us-section,
-      #birras {
-        width: min(100%, 480px);
+      #birras,
+      .footer {
+        width: min(100%, 440px);
         margin-right: auto;
         margin-left: auto;
+      }
+
+      .content-grid {
+        width: min(100%, 440px);
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .content-grid > .section,
+      .content-grid > .special-promo,
+      .content-grid > .footer {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      .hero,
+      .section,
+      .footer,
+      .promo-card,
+      .media-card,
+      .beer-card,
+      .snack-card,
+      .rule-item,
+      .combo-note,
+      .price-chip,
+      .waitlist-input,
+      .waitlist-button {
+        min-width: 0;
+        max-width: 100%;
+      }
+
+      .carousel,
+      .loyalty-carousel,
+      .snacks-carousel {
+        grid-auto-flow: row;
+        grid-auto-columns: unset;
+        grid-template-columns: 1fr;
+        overflow-x: visible;
+        overflow-y: visible;
+        padding-bottom: 0;
+        scroll-snap-type: none;
+      }
+
+      .media-card,
+      .beer-card,
+      .snack-card,
+      .promo-card {
+        width: 100%;
+        scroll-snap-align: none;
       }
 
       .know-us-section .section-header,
@@ -2062,21 +2144,11 @@
         text-align: center;
       }
 
-      .snacks-grid {
-        grid-template-columns: 1fr;
-      }
-
       .snack-card {
         min-height: auto;
         padding: 14px;
-      }
-
-      .waitlist-panel,
-      #combo,
-      .rules-panel {
-        width: min(100%, 480px);
-        margin-right: auto;
-        margin-left: auto;
+        justify-items: flex-start;
+        text-align: left;
       }
 
       .waitlist-panel .section-header,
@@ -2111,16 +2183,64 @@
       .waitlist-panel,
       #combo,
       .rules-panel {
-        padding: 16px;
+        padding: 14px;
       }
 
       .promo-card {
-        padding: 16px;
-        gap: 14px;
+        padding: 14px;
+        gap: 12px;
+      }
+
+      .price-row {
+        gap: 10px;
+      }
+
+      .price-chip {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .stamps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .stamp {
+        min-height: 72px;
+      }
+
+      .stamp strong {
+        font-size: 1rem;
+      }
+
+      .stamp-label {
+        font-size: 0.64rem;
       }
 
       .waitlist-form {
         grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .waitlist-panel > p,
+      #combo .promo-card p,
+      .rule-content,
+      .footer p,
+      .microcopy {
+        font-size: 0.84rem;
+        line-height: 1.45;
+      }
+
+      .waitlist-input,
+      .waitlist-button {
+        min-height: 50px;
+      }
+
+      .waitlist-button,
+      .waitlist-input {
+        width: 100%;
+        min-width: 0;
       }
 
       .waitlist-button,
@@ -2128,12 +2248,57 @@
         width: 100%;
       }
 
+      .rules-panel {
+        gap: 8px;
+        max-height: none;
+        overflow: visible;
+        scroll-snap-type: none;
+      }
+
+      .rules-panel .section-header {
+        margin-bottom: 4px;
+      }
+
+      .rules-panel .section-header h2 {
+        font-size: 0.98rem;
+      }
+
+      .rules-panel .section-header p {
+        font-size: 0.76rem;
+      }
+
+      .rule-item {
+        border-radius: 18px;
+        scroll-snap-align: none;
+      }
+
       .rule-item summary {
-        padding: 16px 18px;
+        padding: 12px 14px;
+        gap: 8px;
+        align-items: flex-start;
+        font-size: 0.84rem;
+        line-height: 1.32;
+      }
+
+      .rule-item summary::after {
+        width: 24px;
+        height: 24px;
+        font-size: 0.98rem;
       }
 
       .rule-content {
-        padding: 0 18px 18px;
+        padding: 0 14px 14px;
+        font-size: 0.82rem;
+        line-height: 1.42;
+      }
+
+      .footer {
+        padding: 16px;
+        gap: 12px;
+      }
+
+      .footer h2 {
+        font-size: 0.96rem;
       }
 
       .mobile-tabbar {
@@ -2189,6 +2354,14 @@
         grid-auto-columns: calc((100% - 36px) / 3);
         gap: 18px;
         padding-bottom: 12px;
+      }
+
+      .loyalty-carousel {
+        grid-auto-columns: minmax(280px, 1fr);
+      }
+
+      .snacks-carousel {
+        grid-auto-columns: minmax(220px, 1fr);
       }
 
       .instagram-embed {
@@ -2725,22 +2898,24 @@
           <p>Comprá 4 combos y la 5ta ficha es GRATIS</p>
         </div>
 
-        <div class="promo-card">
-          <div class="price-row">
-            <p>Comprá 4 combos y la 5ta ficha es GRATIS. Cada pedido enciende una bola de pool y la bola 8 dispara el canje.</p>
-            <div class="price-chip" id="comboPriceChip"><small>Promo</small> AR$ 9.500</div>
-          </div>
+        <div class="carousel loyalty-carousel" aria-label="Carrusel de fidelidad">
+          <article class="promo-card">
+            <div class="price-row">
+              <p>Comprá 4 combos y la 5ta ficha es GRATIS. Cada pedido enciende una bola de pool y la bola 8 dispara el canje.</p>
+              <div class="price-chip" id="comboPriceChip"><small>Promo</small> AR$ 9.500</div>
+            </div>
 
-          <div class="stamps" id="stamps" aria-label="Progreso del programa de fidelidad">
-            <div class="stamp"><div><strong>1</strong><span class="stamp-label">Bola 1</span></div></div>
-            <div class="stamp"><div><strong>2</strong><span class="stamp-label">Bola 2</span></div></div>
-            <div class="stamp"><div><strong>3</strong><span class="stamp-label">Bola 3</span></div></div>
-            <div class="stamp is-eight-ball"><div><strong>8</strong><span class="stamp-label">Bola 8</span></div></div>
-          </div>
+            <div class="stamps" id="stamps" aria-label="Progreso del programa de fidelidad">
+              <div class="stamp"><div><strong>1</strong><span class="stamp-label">Bola 1</span></div></div>
+              <div class="stamp"><div><strong>2</strong><span class="stamp-label">Bola 2</span></div></div>
+              <div class="stamp"><div><strong>3</strong><span class="stamp-label">Bola 3</span></div></div>
+              <div class="stamp is-eight-ball"><div><strong>8</strong><span class="stamp-label">Bola 8</span></div></div>
+            </div>
 
-          <button class="cta-button" id="comboButton" type="button">Pedir Ficha + Cerveza</button>
+            <button class="cta-button" id="comboButton" type="button">Pedir Ficha + Cerveza</button>
 
-          <div class="combo-note" id="comboNote">Llevás 0 de 4 combos. Las bolas se encienden con cada pedido y la bola 8 dispara el canje.</div>
+            <div class="combo-note" id="comboNote">Llevás 0 de 4 combos. Las bolas se encienden con cada pedido y la bola 8 dispara el canje.</div>
+          </article>
         </div>
       </section>
 
@@ -2813,7 +2988,7 @@
           <p id="snackSelectionHint">Sumalos a tu pedido de cerveza con el botón +</p>
         </div>
 
-        <div class="snacks-grid" aria-label="Snacks para sumar a la cerveza">
+        <div class="snacks-grid carousel snacks-carousel" aria-label="Snacks para sumar a la cerveza">
           <article class="snack-card" data-snack-card="Papas">
             <div class="snack-icon" aria-hidden="true">🍟</div>
             <h3>Papas</h3>
