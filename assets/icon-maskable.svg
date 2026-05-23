@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Wall ST icono maskable</title>
+  <desc id="desc">Icono maskable con zona segura para instalación en Android.</desc>
+  <defs>
+    <linearGradient id="mask-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#170d11"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff295d"/>
+      <stop offset="100%" stop-color="#c80033"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" fill="url(#mask-bg)"/>
+  <circle cx="256" cy="256" r="148" fill="#111111" stroke="#2a2a2a" stroke-width="10"/>
+  <path d="M160 176h42l33 125 41-125h37l41 125 33-125h42l-59 196h-37l-39-112-39 112h-37l-58-196z" fill="url(#accent)" filter="url(#glow)"/>
+  <circle cx="364" cy="154" r="24" fill="#ff003c" opacity="0.92"/>
+  <circle cx="364" cy="154" r="8" fill="#fff3f6"/>
+</svg>

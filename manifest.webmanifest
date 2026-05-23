@@ -1,0 +1,25 @@
+{
+  "name": "Wall ST - POOL BAR",
+  "short_name": "Wall ST",
+  "description": "Pedidos por WhatsApp, combos de pool + cerveza y birras para Wall ST - Pool Bar.",
+  "lang": "es-AR",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "orientation": "portrait",
+  "categories": [
+    "food",
+    "drink",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "./assets/Logo.jpg",
+      "sizes": "683x671",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

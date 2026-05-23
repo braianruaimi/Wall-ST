@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Wall ST icono 512</title>
+  <desc id="desc">Icono oscuro con acento rojo neón para la PWA de Wall ST Pool Bar.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#161616"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff3366"/>
+      <stop offset="100%" stop-color="#c50033"/>
+    </linearGradient>
+    <radialGradient id="glow-dot" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff1f5"/>
+      <stop offset="100%" stop-color="#ff003c"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="108" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="154" fill="#101010" stroke="#2a2a2a" stroke-width="8"/>
+  <path d="M154 166h46l35 132 43-132h38l43 132 35-132h46l-61 204h-39l-43-124-43 124h-39l-61-204z" fill="url(#accent)" filter="url(#glow)"/>
+  <circle cx="378" cy="139" r="26" fill="#ff003c" opacity="0.9"/>
+  <circle cx="378" cy="139" r="10" fill="url(#glow-dot)"/>
+</svg>

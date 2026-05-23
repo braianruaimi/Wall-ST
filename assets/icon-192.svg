@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 192 192" role="img" aria-labelledby="title desc">
+  <title id="title">Wall ST icono 192</title>
+  <desc id="desc">Icono oscuro con acento rojo neón para Wall ST Pool Bar.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#161616"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff245a"/>
+      <stop offset="100%" stop-color="#c70031"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="192" height="192" rx="42" fill="url(#bg)"/>
+  <circle cx="96" cy="96" r="58" fill="#101010" stroke="#2d2d2d" stroke-width="3"/>
+  <path d="M58 58h17l13 49 16-49h14l16 49 13-49h17l-23 76h-14l-16-46-16 46H81L58 58z" fill="url(#accent)" filter="url(#glow)"/>
+  <circle cx="142" cy="52" r="10" fill="#ff003c" opacity="0.88"/>
+  <circle cx="142" cy="52" r="3" fill="#fff1f5"/>
+</svg>
